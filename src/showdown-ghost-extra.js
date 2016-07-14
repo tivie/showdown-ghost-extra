@@ -1,10 +1,6 @@
 /* jshint node:true, browser:true */
 
-// Ghost Image Preview
-//
-// Manages the conversion of image markdown `![]()` from markdown into the HTML image preview
-// This provides a dropzone and other interface elements for adding images
-// Is only used in the admin client.
+// Ghost extra
 (function (extension) {
   'use strict';
 
@@ -26,7 +22,7 @@
 
 }(function() {
 
-  var ESCAPE_CHAR = '¨';
+  var ESCAPE_CHAR = 'Â¨';
 
   return [
     // Multiple underscores
