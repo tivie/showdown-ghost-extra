@@ -22,19 +22,24 @@
 
 }(function() {
 
-  var ESCAPE_CHAR = '¨';
-
   return [
     // Multiple underscores
     // keep 4 or more inline underscores e.g. Ghost rocks my _____!
-    // currently fails on:
+    // Fixed failing on:
     //  - reference style urls and imgs
     //  - code blocks
     {
-      type: 'lang',
-      regex: /([^_\n\r])(_{4,})/g,
-      replace: function (match, prefix, underscores) {
-        return prefix + underscores.replace(/_/g, '\\_');
+      type: 'listener',
+      listeners: {
+        'italicsAndBold.before': function (evtName, text) {
+          text = text.replace(/([^_\n\r])(_{4,})/g, function (match, prefix, underscores) {
+            underscores = underscores.replace(/_/g, function (m) {
+              return '¨E' + m.charCodeAt(0) + 'E';
+            });
+            return prefix + underscores;
+          });
+          return text;
+        }
       }
     }
   ];
