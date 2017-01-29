@@ -36,15 +36,6 @@
       replace: function (match, prefix, underscores) {
         return prefix + underscores.replace(/_/g, '\\_');
       }
-    },
-    // Handle escaped tildes
-    // HTML extension = happens AFTER showdown
-    // NOTE: showdown replaces "~" with "~T", and this char doesn't get escaped properly.
-    // This will be moved to core as strikethrough is now supported in options mode
-    {
-      type: 'html',
-      regex: /\\~/g,
-      replace: '~'
     }
   ];
 }));
