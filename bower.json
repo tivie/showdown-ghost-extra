@@ -1,7 +1,7 @@
 {
   "name": "showdown-ghost-extra",
   "homepage": "https://github.com/tivie/showdown-ghost-extra",
-  "main": "src/showdown-ghost-extra.js",
+  "main": "dist/showdown-ghost-extra.js",
   "moduleType": [
     "amd",
     "globals",
@@ -11,7 +11,8 @@
     "showdown",
     "ghost",
     "extra",
-    "multiple udnerscores"
+    "multiple",
+    "udnerscores"
   ],
   "license": "MIT",
   "ignore": [
@@ -20,5 +21,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "authors": [
+    "Estevao Soares dos Santos <estevao.santos@gmail.com>"
+  ],
+  "description": "Add extra features to ghost markdown flavor"
 }
